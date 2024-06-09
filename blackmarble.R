@@ -15,7 +15,8 @@ library(viridis)
 ### Phase 1: load gdp data, clean the data, process the data from short to long
 # some data cleaning is done in this step through observing the excel file and
 # choosing the correct sheet number, skip value, and column names (if necessary)
-excel_file_path <- "/Users/kentongoldthorpe/OneDrive/Documents/MBA/FA24_1/ECON_CAP/zb_vrp_2021.xlsx"
+# download the data @ https://ukrstat.gov.ua/druk/publicat/kat_u/publ2_u.htm
+excel_file_path <- # path to zb_vrp_2021.xlsx
 sheet_number <- 8
 skip_value <- 7
 col_names <- c("NL_NAME_1",
@@ -65,7 +66,7 @@ ukraine[ukraine$NL_NAME_1 == "Доне́цька", "NL_NAME_1"] <- "Донець
 ukraine[ukraine$NL_NAME_1 == "Київ", "NL_NAME_1"] <- "м.Київ"
 
 # Bearer token from NASA
-bearer <- "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbF9hZGRyZXNzIjoia2VudG9uZ29sZHRob3JwZUB1LmJvaXNlc3RhdGUuZWR1IiwiaXNzIjoiQVBTIE9BdXRoMiBBdXRoZW50aWNhdG9yIiwiaWF0IjoxNzEyOTMyOTMxLCJuYmYiOjE3MTI5MzI5MzEsImV4cCI6MTg3MDYxMjkzMSwidWlkIjoia2VudG9uZ29sZHRob3JwZSIsInRva2VuQ3JlYXRvciI6ImtlbnRvbmdvbGR0aG9ycGUifQ.K2tyVGHaMJXm18azCS4LMTLDB4CaaeH3bR1WNyejTAg"
+bearer <- # place your token here
 
 # bm_extract Processing
 ntl_df <- bm_extract(roi_sf = ukraine,
